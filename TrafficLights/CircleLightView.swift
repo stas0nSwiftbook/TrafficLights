@@ -17,8 +17,8 @@ struct CircleLightView: View {
         ZStack {
             Circle()
                 .foregroundColor(color)
-                .frame(width: screenWidth/3,
-                       height: screenWidth/3)
+                .frame(width: screenWidth / 3,
+                       height: screenWidth / 3)
                 .opacity(isOn ? 1.0 : 0.4)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
         }
