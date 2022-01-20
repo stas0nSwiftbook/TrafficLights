@@ -14,6 +14,8 @@ struct MainView: View {
     @State private var greenLight = CircleLightView(color: .green)
     @State private var buttonTitle = "Start"
     
+    private let screenHeight = UIScreen.main.bounds.size.height
+    
     var body: some View {
         ZStack {
             Color.black
@@ -24,7 +26,7 @@ struct MainView: View {
                 Spacer()
                 button
             }
-            .padding(60)
+            .padding(screenHeight / 10)
         }
         .ignoresSafeArea()
     }
