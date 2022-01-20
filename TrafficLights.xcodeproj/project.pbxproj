@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2D8FE3B2799F2F500C7F752 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8FE3A2799F2F500C7F752 /* ButtonView.swift */; };
+		C2D8FE3B2799F2F500C7F752 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8FE3A2799F2F500C7F752 /* CustomButtonView.swift */; };
 		C2DFDB5627996FAA0098D51C /* TrafficLightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DFDB5527996FAA0098D51C /* TrafficLightsApp.swift */; };
 		C2DFDB5827996FAA0098D51C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DFDB5727996FAA0098D51C /* MainView.swift */; };
 		C2DFDB5A27996FAA0098D51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2DFDB5927996FAA0098D51C /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2D8FE3A2799F2F500C7F752 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		C2D8FE3A2799F2F500C7F752 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		C2DFDB5227996FAA0098D51C /* TrafficLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DFDB5527996FAA0098D51C /* TrafficLightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightsApp.swift; sourceTree = "<group>"; };
 		C2DFDB5727996FAA0098D51C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 				C2DFDB5527996FAA0098D51C /* TrafficLightsApp.swift */,
 				C2DFDB5727996FAA0098D51C /* MainView.swift */,
 				C2DFDB63279971D20098D51C /* CircleLightView.swift */,
-				C2D8FE3A2799F2F500C7F752 /* ButtonView.swift */,
+				C2D8FE3A2799F2F500C7F752 /* CustomButtonView.swift */,
 				C2DFDB5927996FAA0098D51C /* Assets.xcassets */,
 				C2DFDB5B27996FAA0098D51C /* Preview Content */,
 			);
@@ -145,7 +145,7 @@
 			files = (
 				C2DFDB5827996FAA0098D51C /* MainView.swift in Sources */,
 				C2DFDB64279971D20098D51C /* CircleLightView.swift in Sources */,
-				C2D8FE3B2799F2F500C7F752 /* ButtonView.swift in Sources */,
+				C2D8FE3B2799F2F500C7F752 /* CustomButtonView.swift in Sources */,
 				C2DFDB5627996FAA0098D51C /* TrafficLightsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

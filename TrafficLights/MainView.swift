@@ -30,7 +30,7 @@ struct MainView: View {
     }
     
     var button: some View {
-        ButtonView(buttonTitle: buttonTitle) {
+        CustomButtonView(buttonTitle: buttonTitle) {
             buttonTitle = "Next"
             if redLight.isOn {
                 redLight.isOn = false
