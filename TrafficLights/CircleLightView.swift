@@ -9,22 +9,22 @@ import SwiftUI
 
 struct CircleLightView: View {
     let color: Color
-    var isOn = false
+    let opacity: Double
     
     private let screenWidth = UIScreen.main.bounds.size.width
     
     var body: some View {
         Circle()
-            .foregroundColor(color)
             .frame(width: screenWidth / 3,
                    height: screenWidth / 3)
-            .opacity(isOn ? 1.0 : 0.4)
+            .foregroundColor(color)
+            .opacity(opacity)
             .overlay(Circle().stroke(Color.gray, lineWidth: 2))
     }
 }
 
 struct CircleLightView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleLightView(color: .red)
+        CircleLightView(color: .red, opacity: 1.0)
     }
 }

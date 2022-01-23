@@ -7,45 +7,67 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct MainView: View {
     
-    @State private var redLight = CircleLightView(color: .red)
-    @State private var yellowLight = CircleLightView(color: .yellow)
-    @State private var greenLight = CircleLightView(color: .green)
     @State private var buttonTitle = "Start"
     
-    private let screenHeight = UIScreen.main.bounds.size.height
+    @State private var redLightState = 0.4
+    @State private var yellowLightState = 0.4
+    @State private var greenLightState = 0.4
+    
+    @State private var currentLight = CurrentLight.red
+    
+    private func nextColor() {
+        
+        let lightIsOn = 1.0
+        let lightIsOff = 0.4
+        
+        switch currentLight {
+        case .red:
+            currentLight = .yellow
+            greenLightState = lightIsOff
+            redLightState = lightIsOn
+        case .yellow:
+            currentLight = .green
+            redLightState = lightIsOff
+            yellowLightState = lightIsOn
+        case .green:
+            currentLight = .red
+            greenLightState = lightIsOn
+            yellowLightState = lightIsOff
+        }
+    }
+}
+
+extension MainView {
     
     var body: some View {
         ZStack {
             Color.black
-            VStack {
-                redLight
-                yellowLight
-                greenLight
+                .ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                CircleLightView(color: .red, opacity: redLightState)
+                CircleLightView(color: .yellow, opacity: yellowLightState)
+                CircleLightView(color: .green, opacity: greenLightState)
+                
                 Spacer()
-                button
+                
+                CustomButtonView(title: buttonTitle) {
+                    if buttonTitle == "Start" {
+                        buttonTitle = "Next"
+                    }
+                    nextColor()
+                }
             }
-            .padding(screenHeight / 10)
+            .padding()
         }
-        .ignoresSafeArea()
     }
     
-    var button: some View {
-        CustomButtonView(buttonTitle: buttonTitle) {
-            buttonTitle = "Next"
-            if redLight.isOn {
-                redLight.isOn = false
-                yellowLight.isOn = true
-            } else if yellowLight.isOn {
-                yellowLight.isOn = false
-                greenLight.isOn = true
-            } else {
-                greenLight.isOn = false
-                redLight.isOn = true
-            }
-        }
-    }
 }
 
 struct MainView_Previews: PreviewProvider {

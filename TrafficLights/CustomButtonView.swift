@@ -8,33 +8,30 @@
 import SwiftUI
 
 struct CustomButtonView: View {
-    let buttonTitle: String
+    let title: String
     let action: () -> Void
+    
+    private let screenWidth = UIScreen.main.bounds.size.width
     
     var body: some View {
         Button(action: action) {
-            Text(buttonTitle)
-                .padding(.top, 20)
-                .padding(.bottom, 20)
-                .padding(.leading, 40)
-                .padding(.trailing, 40)
-                .background(.blue)
+            Text(title)
                 .foregroundColor(.white)
                 .font(.title)
-                .textCase(.uppercase)
-                .cornerRadius(20.0)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
         }
+        .frame(width: screenWidth / 2, height: screenWidth / 8)
+        .background(.blue)
+        .textCase(.uppercase)
+        .cornerRadius(20.0)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.gray, lineWidth: 2)
+        )
     }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButtonView(buttonTitle: "Start", action: {
-            
-        })
+        CustomButtonView(title: "Start", action: {})
     }
 }
